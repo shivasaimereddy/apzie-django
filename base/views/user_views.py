@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from rest_framework import response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 
 from django.contrib.auth.models import User
+from rest_framework.utils import serializer_helpers
 from base.serializers import ProductSerializer, UserSerializer, UserSerializerWithToken
 # Create your views here.
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
@@ -104,6 +106,7 @@ def updateUser(request, pk):
     user.username = data['email']
     user.email = data['email']
     user.is_staff = data['isAdmin']
+    user.is_active = data['isActive']
 
     user.save()
     serializer = UserSerializer(user, many=False)

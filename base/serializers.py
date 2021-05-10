@@ -8,10 +8,12 @@ class UserSerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField(read_only=True)
     _id = serializers.SerializerMethodField(read_only=True)
     isAdmin = serializers.SerializerMethodField(read_only=True)
+    isActive = serializers.SerializerMethodField(read_only=True)
 
     class Meta:
         model = User
-        fields = ['id', '_id', 'username', 'email', 'name', 'isAdmin']
+        fields = ['id', '_id', 'username',
+                  'email', 'name', 'isAdmin', 'isActive']
 
     def get__id(self, obj):
         return obj.id
@@ -25,6 +27,9 @@ class UserSerializer(serializers.ModelSerializer):
             name = obj.email
 
         return name
+
+    def get_isActive(self, obj):
+        return obj.is_active
 
 
 class UserSerializerWithToken(UserSerializer):
