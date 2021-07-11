@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'h8%g+uokldy+a=h%0%oasw6p9bw&m*$(8a+#$wrm)3(e4sfy@o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -126,10 +126,10 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'apzie',
-        'USER': 'shivasai@bittu',
-        'PASSWORD': 'infyss@123',
-        'HOST': 'bittu.postgres.database.azure.com',
+        'NAME': 'dduer3c4rdq8hh',
+        'USER': 'veqdvbnroxzctt',
+        'PASSWORD': '10742db6cb9732ecc3d5460dde12d52d30c4f8f113176f0fb91f589cecb0177f',
+        'HOST': 'ec2-54-90-211-192.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
