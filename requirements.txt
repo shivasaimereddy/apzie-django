@@ -4,7 +4,7 @@ atomicwrites==1.4.0
 attrs==21.2.0
 autopep8==1.5.7
 colorama==0.4.4
-Django==3.2.10
+Django==3.2.13
 django-cors-headers==3.7.0
 djangorestframework==3.12.4
 djangorestframework-simplejwt==4.6.0
